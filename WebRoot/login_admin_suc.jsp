@@ -10,7 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>My JSP 'login_obj_suc.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -19,11 +20,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+
   </head>
   
   <body>
-    测试页面<br>
-    <s:debug/><br>
-    <a href="login_admin.jsp">login for admin</a>
+  <body>
+  
+  <s:debug/>
+    login_obj_suc;
+    <br>你的用户名为：<s:property value="admin.username"/>
+    <br>你的密码为：<s:property value="admin.password"/>
   </body>
 </html>

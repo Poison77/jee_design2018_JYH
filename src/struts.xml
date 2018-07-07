@@ -2,7 +2,20 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
     "http://struts.apache.org/dtds/struts-2.5.dtd">
+    
 <struts>
-	<constant name="struts.devMode" value="true" />	
-	
+	<package name="default" extends="struts-default">
+        <action name="LoginAction" class="action.LoginAction">
+            <result name="success">/login_admin_suc.jsp</result>
+            <result name="fail">/index.jsp</result>
+			<result name="input">/login_admin.jsp</result>
+        </action>
+    </package>
+    
+	<package name="login_Validation" namespace="" extends="struts-default">
+		<action name="LoginAction" class="action.LoginAction">
+			<result name="success">/login_admin_suc.jsp</result>
+			<result name="input">/login_admin.jsp</result>
+		</action>
+	</package>
 </struts>

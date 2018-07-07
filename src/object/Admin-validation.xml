@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<!-- field标签指明了验证的是哪一个字段; field-validator标签则是一个校验器，每个字段可以包含多个校验器; field-validator中的param字段指明了校验器中的参数; 
+		message标签则表示校验不通过时显示在页面上的提示消息。 -->
+	<!-- 校验前删除name属性中的空格 -->
+
+	<field name="username">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>required string</message>
+		</field-validator>
+		<field-validator type="requiredstring">
+			<message>Username can't be empty</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(/w{4,25})]]></param>
+			<message>you enter can only be letters and arrays,and between 4 and
+				25 in length.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">10</param>
+			<param name="minLength">3</param>
+			<message>Username should between ${minLength} and ${maxLength}
+			</message>
+		</field-validator>
+	</field>
+	
+	<field name="password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Password can't be empty</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(/w{4,25})]]></param>
+			<message>you enter can only be letters and arrays,and between 4 and
+				25 in length.</message>
+		</field-validator>
+	</field>
+
+</validators>
