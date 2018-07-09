@@ -4,18 +4,15 @@
     "http://struts.apache.org/dtds/struts-2.5.dtd">
     
 <struts>
+	<!-- Struts 2有一个设置（可以设置为struts.propertiestrue或false在struts.properties中），称为devMode（=开发模式）。
+	启用此设置后，Struts 2将提供其他日志记录和调试信息，这可以显着加快开发速度。 -->
+	<constant name="struts.devMode" value="true"/>
 	<package name="default" extends="struts-default">
-        <action name="LoginAction" class="action.LoginAction">
-            <result name="success">/login_admin_suc.jsp</result>
+        <action name="loginAction" class="action.LoginAction" method="checkAdmin">
+            <result name="suc">/login_admin_suc.jsp</result>
             <result name="fail">/index.jsp</result>
 			<result name="input">/login_admin.jsp</result>
         </action>
+        
     </package>
-    
-	<package name="login_Validation" namespace="" extends="struts-default">
-		<action name="LoginAction" class="action.LoginAction">
-			<result name="success">/login_admin_suc.jsp</result>
-			<result name="input">/login_admin.jsp</result>
-		</action>
-	</package>
 </struts>

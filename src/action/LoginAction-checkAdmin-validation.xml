@@ -5,10 +5,10 @@
         
 <validators>
 	<!-- field标签指明了验证的是哪一个字段;
-		 field-validator标签则是一个校验器，每个字段可以包含多个校验器;
-		 field-validator中的param字段指明了校验器中的参数;
-		 message标签则表示校验不通过时显示在页面上的提示消息。
-	 -->
+	field-validator标签则是一个校验器，每个字段可以包含多个校验器;
+	field-validator中的param字段指明了校验器中的参数;
+	message标签则表示校验不通过时显示在页面上的提示消息。 -->
+	
 	 
 	<!-- visitor Visitor校验器，用于检测Action里的复合属性。 -->
 	<field name="admin">

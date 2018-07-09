@@ -7,13 +7,12 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>登录</title>
-
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">    
@@ -29,8 +28,8 @@
 				<h1>Welcome</h1>
 				<s:debug/> 
 				<s:actionerror/>
-				<form class="form" action="LoginAction" method="post">				
-					<input type="text" name="admin.username" placeholder="Username"> 
+				<form class="form" action="loginAction" method="post">				
+					<input type="text" name="admin.adminname" placeholder="Username"> 
 					<input type="password" name="admin.password" placeholder="Password">
 					<!-- 测试校验字段<input type="text" name="test_string" placeholder="Testing"> -->
 					<input type="submit" value="登陆" id="login-button">

@@ -1,27 +1,24 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
+//数据库连接方法
 public class DBConn {
-	private  String url = "jdbc:mysql://localhost:3306/file_review";
-	private  String user = "root";
-	private  String password = "";
-	private  String drive="com.mysql.jdbc.Driver";
-	
-	public  Connection getConn() {
+	private String url = "jdbc:mysql://localhost:3306/film_review";
+	private String user = "root";
+	private String password = "";
+	private String drive = "com.mysql.jdbc.Driver";
+
+	public Connection getConn() {
 		Connection con = null;
-		//  加载MySql的驱动类
+		// 加载MySql的驱动类
 		try {
-			Class.forName(jdbcName);
+			Class.forName(drive);
 		} catch (Exception e) {
 			System.out.println("找不到驱动程序类 ，加载驱动失败！");
 			e.printStackTrace();
 		}
-		//  建立连接
+		// 建立连接
 		try {
 			con = DriverManager.getConnection(url, user, password);
 		} catch (SQLException se) {
@@ -30,25 +27,9 @@ public class DBConn {
 		}
 		return con;
 	}
-
-	public void dbClose(Connection con, PreparedStatement st, ResultSet rs) {
-		try {
-			if (rs != null) {
-				rs.close();
-				rs = null;
-			}
-			if (st != null) {
-				((Connection) st).close();
-				st = null;
-
-			}
-			if (con != null) {
-				con.close();
-				con = null;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
+	
+	/*public static void main(String[] args)
+	{
+		System.out.println(new DBConn().getConn());		
+	}*/
 }

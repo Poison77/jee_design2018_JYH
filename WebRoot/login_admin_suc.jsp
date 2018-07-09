@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <s:debug/>
     login_obj_suc;
-    <br>你的用户名为：<s:property value="admin.username"/>
+    <br>你的用户名为：<s:property value="admin.adminname"/>
     <br>你的密码为：<s:property value="admin.password"/>
   </body>
 </html>
